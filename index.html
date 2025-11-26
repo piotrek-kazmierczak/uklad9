@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Układ Złożony z Nawigacją i Sekcjami</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 800px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }
+
+        .header {
+            height: 70px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-grow: 1; /* Wypełnia resztę wysokości */
+            border-bottom: 1px solid black;
+        }
+
+        /* --- BLOK NAWIGACYJNY (LEWA STRONA) --- */
+        .nav-block {
+            width: 30%; /* Blok nawigacyjny zajmuje 30% szerokości */
+            height: 100%;
+            border-right: 1px solid black;
+            display: flex;
+            flex-direction: column; /* Ustawia wewnętrzne bloki w kolumnie */
+            text-align: center;
+            box-sizing: border-box;
+            font-weight: bold;
+        }
+
+        .nav-header {
+            height: 40px; /* Stała wysokość nagłówka nawigacji */
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-item {
+            flex-grow: 1; /* Bloki 1, 2, 3 dzielą równo resztę pionowej przestrzeni */
+            width: 100%;
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-item:last-of-type {
+            border-bottom: none; /* Usuwa zbędną dolną ramkę */
+        }
+
+        /* --- BLOK GŁÓWNY (PRAWA STRONA) --- */
+        .main-block {
+            width: 70%; /* Blok główny zajmuje pozostałe 70% szerokości */
+            height: 100%;
+            display: flex;
+            flex-direction: column; /* Ustawia sekcje w kolumnie */
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+
+        .main-header {
+            height: 40px; /* Stała wysokość nagłówka bloku głównego */
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section {
+            flex-grow: 1; /* Sekcje 1, 2, 3 dzielą równo resztę pionowej przestrzeni */
+            width: 100%;
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section:last-child {
+            border-bottom: none; /* Usuwa zbędną dolną ramkę */
+        }
+
+        .footer {
+            height: 70px;
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">Blok nagłówkowy</div>
+        
+        <div class="content-wrapper">
+            
+            <div class="nav-block">
+                <div class="nav-header">Blok nawigacyjny</div>
+                <div class="nav-item">Blok 1</div>
+                <div class="nav-item">Blok 2</div>
+                <div class="nav-item">Blok 3</div>
+            </div>
+            
+            <div class="main-block">
+                <div class="main-header">Blok główny</div>
+                <div class="section">Sekcja 1</div>
+                <div class="section">Sekcja 2</div>
+                <div class="section">Sekcja 3</div>
+            </div>
+        </div>
+
+        <div class="footer">Blok stopki</div>
+    </div>
+
+</body>
+</html>
